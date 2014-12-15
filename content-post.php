@@ -12,18 +12,17 @@
 	<?php if ( 'post' == get_post_type() ) : ?>
 		<p class="date"><?php the_time('m/j/y g:i A') ?></p>
 	<?php endif; ?>
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'basik' ), 
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
+	<?php
+		/* translators: %s: Name of current post */
+		the_content( sprintf(
+			__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'basik' ), 
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		) );
+	?>
 
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'basik' ),
-				'after'  => '</div>',
-			) );
-		?>
-	<!--<a class="addArrowRight" href="/blog/XXX" title="Read more">Read more</a>-->
+	<?php
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . __( 'Pages:', 'basik' ),
+			'after'  => '</div>',
+		) );
+	?>
