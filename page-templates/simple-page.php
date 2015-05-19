@@ -11,5 +11,5 @@ get_header(); ?>
 		<?php get_template_part( 'content', 'simple' ); ?>
 	<?php endwhile; ?>
 
-<?php get_sidebar('home'); ?>
+<!--<?php get_sidebar('home'); ?>-->
 <?php get_footer(); ?>

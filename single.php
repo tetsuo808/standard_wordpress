@@ -12,26 +12,14 @@
 
 get_header(); ?>
 
-<body <?php body_class(); ?>>
-
-	<div id="header-wrap">
-		<div id="header">
-			<h1 id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => '1', 'container_id' => 'globalNav', 'menu_class' => 'clearfix' ) ); ?>
-			<p>T: 0000 000 000<br />E: info@company.co.uk</p>
-		</div>
-	</div>
-	
-	<div id="wrapper-wrap">
-		<div id="wrapper" class="clearfix">
-			<a href="#globalNav" class="accessLink" accesskey="S">skip to navigation</a>
-	
-			<div id="mainContent" <?php post_class(); ?>>
-				<?php the_post_thumbnail(); ?>
-				<!--<h2><?php the_title(); ?></h2>-->
+	<div class="container clearfix">
+		<div class="copy">
+			<div <?php post_class(); ?>>
+				<!--<?php the_post_thumbnail(); ?>-->
 				
-				<?php the_breadcrumb(); ?>
-
+				<h1><?php the_title(); ?></h1>
+				<?php the_content(); ?>
+				
 				<?php
 					// Start the Loop.
 					while ( have_posts() ) : the_post();
@@ -62,7 +50,10 @@ get_header(); ?>
 					}
 					endwhile;
 				?>
+				
 			</div>
+		</div>
+	</div>
 			
-<?php get_sidebar('blog'); ?>
+<!--<?php get_sidebar('blog'); ?>-->
 <?php get_footer(); ?>

@@ -10,31 +10,24 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <head>
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<title><?php wp_title( '|', true, 'right' ); ?>Premier Plastering</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="chrome=1" />
 	
 	<meta charset="utf-8" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="robots" content="all" />
-	<meta name="author" content="COMPANY Ltd." />
-	
+	<meta name="description" content="<?php bloginfo('description'); ?>" />
 	<link rel="profile" href="http://purl.org/uF/hCard/1.0/" />
 	<link rel="profile" href="http://purl.org/uF/rel-tag/1.0/" />
+	
 	<link href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-	<link href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
-	<link href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
-	<link href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-57x57-precomposed.png" rel="apple-touch-icon-precomposed" />
 
 	<?php wp_head(); ?>
 	
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/print.css" type="text/css" media="print" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css" media="screen" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/theme-mobile.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' />
 	
-	<!--[if IE 7]>
-		<link href="css/style_ie7.css" rel="stylesheet" />
-	<![endif]-->
 	<!--[if IE 8]>
 		<link href="css/style_ie8.css" rel="stylesheet" />
 	<![endif]-->
@@ -42,6 +35,26 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/core.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.bxslider.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jssor.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jssor.slider.js"></script>
+	
+	<script src="<?php echo get_template_directory_uri(); ?>/js/funcs.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/funcs-slider.js"></script>
 </head>
+
+<body <?php body_class(); ?>>
+
+	<div class="container">
+		<div class="header clearfix">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" /></a>
+			
+			<div class="contact-info">
+				<strong>Contact:</strong> 0116 288 4506
+			</div>
+			
+			<?php wp_nav_menu( array( 'depth' => '1', 'container_class' => 'menu', 'menu_id' => 'nav', 'menu_class' => '' ) ); ?>
+			<a href="#" id="pull">Show Menu</a>
+		</div>
+	</div>

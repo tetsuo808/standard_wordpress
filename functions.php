@@ -194,3 +194,15 @@ function url_filtered($fields)
    unset($fields['url']);
   return $fields;
 }
+
+/**
+*   Add page title back to homepage
+*/
+add_filter( 'wp_title', 'baw_hack_wp_title_for_home' );
+function baw_hack_wp_title_for_home( $title )
+{
+  if( empty( $title ) && ( is_home() || is_front_page() ) ) {
+    return __( 'Home', 'theme_domain' ) . ' | ' ;
+  }
+  return $title;
+}

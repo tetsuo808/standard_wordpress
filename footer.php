@@ -4,13 +4,16 @@
  */
 ?>
 
-<div id="footer">
-	<div id="footer-details">
-		<p>&copy; 2011-<?php echo date('Y'); ?> COMPANY NAME Ltd.</p>
+	<div class="footer clearfix">
+		<div class="container">
+			<div class="footer-copy-l">
+				<p>Copyright &copy; <?php echo date('Y'); ?> Company Ltd</p>
+			</div>
+			<div class="footer-copy-r">
+				<p><a href="<?php echo get_template_directory_uri(); ?>/contact">Contact Us</a></p>
+			</div>
+		</div>
 	</div>
-</div>
-
-<?php wp_footer(); ?>
 
 </body>
 </html>
