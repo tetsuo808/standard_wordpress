@@ -176,7 +176,7 @@ function is_child( $parent = '' ) {
     if ( in_array( (string) $parent_obj['ID'], $parent_array ) ) {
         return true;
     } elseif ( in_array( (string) $parent_obj['post_title'], $parent_array ) ) {
-        return true;    
+        return true;
     } elseif ( in_array( (string) $parent_obj['post_name'], $parent_array ) ) {
         return true;
     } else {
@@ -206,3 +206,37 @@ function baw_hack_wp_title_for_home( $title )
   }
   return $title;
 }
+
+/**
+*   Customised main menu html
+*/
+class My_Walker extends Walker_Nav_Menu {
+
+    function start_lvl( &$output, $depth = 0, $args = array()) {
+        $indent = str_repeat("\t", $depth);
+
+        if ($depth == 0) {
+            $output .= "\n$indent<div class='mobnav-subarrow'></div><ul class='children'>\n";
+        } else {
+            $output .= "\n$indent<ul class='children'>\n";
+        }
+    }
+
+    function end_lvl( &$output, $depth = 0, $args = array()) {
+        $indent = str_repeat("\t", $depth);
+
+        if ($depth == 0) {
+            $output .= "$indent</ul>\n";
+        } else {
+            $output .= "$indent</ul>\n";
+        }
+    }
+}
+
+/**
+*  Removes emoji crap in the header
+*/
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );

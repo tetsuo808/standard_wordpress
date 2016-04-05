@@ -24,37 +24,56 @@
 
 	<?php wp_head(); ?>
 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css" media="screen" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/theme-mobile.css" media="screen" />
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' />
 
-	<!--[if IE 8]>
-		<link href="css/style_ie8.css" rel="stylesheet" />
-	<![endif]-->
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.bxslider.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/jssor.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jssor.slider.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/dist/production.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.smoothscroll.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.superfish.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/funcs.js"></script>
 
 	<script src="<?php echo get_template_directory_uri(); ?>/js/funcs.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/funcs-slider.js"></script>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 
-<body <?php body_class(); ?>>
+<body id="generic" <?php body_class(); ?>>
 
-	<div class="container">
-		<div class="header clearfix">
+	<div class="skip"><a href="<?php get_the_permalink(); ?>#skip" accesskey="s">Skip to content &#8595;</a></div>
+
+	<header id="header">
+		<div class="container cont-header clearfix" id="top">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" /></a>
+			<h1>Title of the Website</h1>
 
-			<div class="contact-info">
-				<strong>Contact:</strong> 0116 288 4506
+			<div class="quick-links">
+				<div class="social">
+					<a href="#" rel="external nofollow" target="_blank" class="sc-tw"><span>Follow us on Twitter</span></a>
+					<a href="#" rel="external nofollow" target="_blank" class="sc-fb"><span>Like us on Facebook</span></a>
+				</div>
+				<p>Tel: <a href="tel:01110220333" class="tel">0111 022 0333</a><br />
+				Email: <a href="mailto:enquiries@company.co.uk">enquiries@company.co.uk</a></p>
 			</div>
-
-			<?php wp_nav_menu( array( 'depth' => '1', 'container_class' => 'menu', 'menu_id' => 'nav', 'menu_class' => '' ) ); ?>
-			<a href="#" id="pull">Show Menu</a>
 		</div>
-	</div>
+	</header>
+
+	<nav id="nav">
+		<div class="container cont-nav clearfix">
+			<button id="pull">Show Menu</button>
+			<?php
+				wp_nav_menu(array(
+					'depth' => '2',
+					'menu' => 'Main Menu',
+					'menu_class' => 'clearfix',
+					'menu_id' => 'sf-menu',
+					'container' => '',
+					'walker' => new My_Walker
+				));
+			?>
+		</div>
+	</nav>

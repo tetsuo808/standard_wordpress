@@ -11,13 +11,13 @@
  */
 
 get_header(); ?>
-	
+
 	<div class="container clearfix">
 		<div class="copy">
 			<div <?php post_class(); ?>>
 				<!--<?php the_post_thumbnail(); ?>-->
-				<img class="icon" src="<?php echo get_template_directory_uri(); ?>/images/PP-icon.png" alt="Premier Plastering" />
-				
+				<img class="icon" src="<?php echo get_template_directory_uri(); ?>/images/PP-icon.png" alt="" />
+
 				<?php if ( have_posts() ) : ?>
 
 				<?php if ( is_home() && ! is_front_page() ) : ?>
@@ -25,37 +25,37 @@ get_header(); ?>
 						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 					</header>
 				<?php endif; ?>
-	
+
 				<?php
 				// Start the loop.
 				while ( have_posts() ) : the_post();
-	
+
 					/*
 					 * Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
 					get_template_part( 'content', get_post_format() );
-	
+
 				// End the loop.
 				endwhile;
-	
+
 				// Previous/next page navigation.
 				the_posts_pagination( array(
 					'prev_text'          => __( 'Previous page', 'migration' ),
 					'next_text'          => __( 'Next page', 'migration' ),
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'migration' ) . ' </span>',
 				) );
-	
+
 				// If no content, include the "No posts found" template.
 				else :
 					get_template_part( 'content', 'none' );
-		
+
 				endif;
 				?>
 			</div>
 		</div>
 	</div>
-		
+
 <!--<?php get_sidebar(); ?>-->
 <?php get_footer(); ?>
