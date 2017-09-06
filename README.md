@@ -5,8 +5,7 @@ Migration: a simple WordPress theme for porting static site builds
 
 * No enforced styles, mark-up or libraries
 * Build your own templates as you see fit
-
-- https://github.com/tetsuo808/standard_wordpress
+* https://github.com/tetsuo808/standard_wordpress
 
 Suggested plugins:
 
@@ -18,3 +17,6 @@ Suggested plugins:
 * Timeline Twitter Feed
 * Page-list
 * Breadcrumb NavXT
+* User Role Editor
+* Better Search Replace
+* Polylang

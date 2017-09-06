@@ -53,8 +53,8 @@
 
 			<div class="quick-links">
 				<div class="social">
-					<a href="#" rel="external nofollow" target="_blank" class="sc-tw"><span>Follow us on Twitter</span></a>
-					<a href="#" rel="external nofollow" target="_blank" class="sc-fb"><span>Like us on Facebook</span></a>
+					<a href="<?php $twitter_url = get_option('twitter_url');?>" rel="external nofollow" target="_blank" class="sc-tw"><span>Follow us on Twitter</span></a>
+					<a href="<?php $facebook_url = get_option('facebook_url');?>" rel="external nofollow" target="_blank" class="sc-fb"><span>Like us on Facebook</span></a>
 				</div>
 				<p>Tel: <a href="tel:01110220333" class="tel">0111 022 0333</a><br />
 				Email: <a href="mailto:enquiries@company.co.uk">enquiries@company.co.uk</a></p>
