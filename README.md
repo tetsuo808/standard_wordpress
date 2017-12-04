@@ -20,3 +20,6 @@ Suggested plugins:
 * User Role Editor
 * Better Search Replace
 * Polylang
+
+Disable edits > wp-config.php:
+define('DISALLOW_FILE_EDIT', true);  

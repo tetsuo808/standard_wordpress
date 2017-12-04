@@ -10,7 +10,14 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <head>
-	<title><?php wp_title('&ndash;',true,'right'); ?><?php bloginfo('name'); ?></title>
+	<title><?php global $page, $paged;
+		wp_title( '&ndash; COMPANY', true, 'right' );
+
+		$site_description = get_bloginfo( 'description', 'display' );
+
+		if ( $paged >= 2 || $page >= 2 )
+			echo ' &ndash; ' . sprintf( __( 'Page %s', 'migration' ), max( $paged, $page ) );
+	?></title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -28,7 +35,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' />
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/dist/production.min.js"></script>
+
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.smoothscroll.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.superfish.min.js"></script>
