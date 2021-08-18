@@ -51,6 +51,9 @@
 
 <body id="generic" <?php body_class(); ?>>
 
+	<?php get_template_part( 'parts/coronavirus/banner', 'notice' ); ?>
+	<!-- /parts/coronavirus/banner-notice.php -->
+
 	<div class="skip"><a href="<?php get_the_permalink(); ?>#skip" accesskey="s">Skip to content &#8595;</a></div>
 
 	<header id="header">

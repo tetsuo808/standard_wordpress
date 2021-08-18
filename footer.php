@@ -8,7 +8,7 @@
 
 	<footer id="footer">
 		<div class="container cont-footer clearfix">
-			<p>&#169; <?php echo date('Y'); ?> COMPANY | <a href="<?php echo get_template_directory_uri(); ?>/contact">Contact</a></p>
+			<p>&#169; <?php echo date('Y'); ?> COMPANY | <a href="<?php echo get_site_url(); ?>/contact">Contact</a></p>
 			<?php
 				wp_nav_menu(array(
 					'depth' => '1',

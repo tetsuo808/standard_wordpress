@@ -20,6 +20,11 @@ Suggested plugins:
 * User Role Editor
 * Better Search Replace
 * Polylang
+* WP Rollback
+* Really Simple SSL
+* Mailgun
+* Breeze
+* Regenerate Thumbnails
 
 Disable edits > wp-config.php:
 define('DISALLOW_FILE_EDIT', true);  
