@@ -9,22 +9,35 @@ Migration: a simple WordPress theme for porting static site builds
 
 Suggested plugins:
 
-* Tree View
-* Advanced Custom Fields / Pro
-* Contact Form 7
+
 * Add Meta Tags
-* WP User Avatar
-* Timeline Twitter Feed
-* Page-list
+* Advanced Custom Fields / Pro
+* Advanced Custom Fields: Table Field
 * Breadcrumb NavXT
-* User Role Editor
 * Better Search Replace
-* Polylang
-* WP Rollback
-* Really Simple SSL
+* Contact Form 7
+* CPT UI
+* Contact Form CFDB7
+* Calendar Anything
+* Duplicate Page
+* Disable Comments
+* FFF Cron Manager
+* Limit Revisions
 * Mailgun
-* Breeze
+* Nested Pages
+* Page-listr
+* Polylang
 * Regenerate Thumbnails
+* Radio Buttons for Taxonomies
+* Really Simple SSL
+* Timeline Twitter Feed
+* User Role Editor
+* WP Rollback
+* WP User Avatar
+* WP Fastest Cache
+
+
+
 
 Disable edits > wp-config.php:
 define('DISALLOW_FILE_EDIT', true);  

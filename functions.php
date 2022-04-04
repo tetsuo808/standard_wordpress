@@ -337,3 +337,48 @@ function display_theme_panel_fields()
 }
 
 add_action("admin_init", "display_theme_panel_fields");
+
+
+
+
+/*************************************************************************
+* Adds formatting classes to TinyMCE/Classic Editor.
+*************************************************************************/
+function add_style_select_buttons( $buttons ) {
+	array_unshift( $buttons, 'styleselect' );
+	return $buttons;
+}
+// Register our callback to the appropriate filter
+add_filter( 'mce_buttons_2', 'add_style_select_buttons' );
+
+
+//add custom styles to the WordPress editor
+function my_custom_styles( $init_array ) {
+
+	$style_formats = array(
+		array(
+			'title' => 'Stats (Large)',
+			'block' => 'p',
+			'classes' => 'stats-text-large',
+			'wrapper' => false,
+		),
+		array(
+			'title' => 'Stats (Medium)',
+			'block' => 'p',
+			'classes' => 'stats-text-medium',
+			'wrapper' => false,
+		),
+		array(
+			'title' => 'Stats (Small)',
+			'block' => 'p',
+			'classes' => 'stats-text-small',
+			'wrapper' => false,
+		),
+	);
+	// Insert the array, JSON ENCODED, into 'style_formats'
+	$init_array['style_formats'] = json_encode( $style_formats );
+
+	return $init_array;
+}
+// Attach callback to 'tiny_mce_before_init'
+add_filter( 'tiny_mce_before_init', 'my_custom_styles' );
